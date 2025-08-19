@@ -13,10 +13,6 @@ for d in range(15, -16, -3):#muestro en pantalla la cuenta de números hacia atr
     print(d)
 
 #Mostrar los elementos contenidos en una lista
-colores = ["azul", "rojo", "verde", "amarillo", "violeta"]
-for x in colores:#x es la variable de iteracion.
-    print(x)
-
 animales = ["Elefante", "Oso", "Leon", "Tigre", "Pantera", "Hiena", "Rinoceronte"]
 for a in animales:
     print(a)
@@ -45,7 +41,7 @@ for c in colores:#la variable de iteracion almacena el valor de los elementos de
     if c not in primarios:#la condicion
         print(c)
 
-#Usando for con una lista de indices para acceder a elementos de otra lista.
+#Usando for con una lista de indices para acceder a elementos de otra lista. Sumarle 500 a cada elemento.
 lista = [10, 20, 30, 40, 50]
 for p in [0, 1, 2]:
     lista[p] += 500 #se le suma 500 a los primeros tres elementos de la lista
@@ -75,22 +71,15 @@ def sumaGauss(numero):
     return (numero) * (numero + 1) / 2
 print(sumaGauss(numero))
 
-#Crear un codigo que obtenga los numeros de la sucesion de Fibonacci. Los numeros deben ser exportados a una lista y la cantidad de
-#numeros a obtener debe ser especificada por el usuario.Ejemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-x = int(input('Ingrese la cantidad de numeros de la sucesion de Fibonacci que quiere obtener: '))
-def fibonacci(x):
-    sec_fibonacci = []
-    for i in range(x):#el rango de numeros es el especificado por el usuario
-        if i == 0:
-            sec_fibonacci.append(0)
-        elif i == 1:
-            sec_fibonacci.append(1)
-        else:
-            #se crea la variable siguiente, que almacena la suma de los dos valores anteriores
-            siguiente = sec_fibonacci[i - 1] + sec_fibonacci[i - 2]
-            sec_fibonacci.append(siguiente)#se agrega el valor a la lista
-    return sec_fibonacci
-print(fibonacci(x))
+#Pedirle al usuario la cantidad de numeros de la sucesion de fibonacci que desea obtener y agregarlos a una lista.
+cantidad = int(input('Ingrese la cantidad de numeros de la sucescecion de fibonacci que quiere obtener: '))
+def sucFibonacci(cantidad):
+    fibonacci = [0, 1]#la lista de salida con los dos primeros numeros ya incluidos
+    for i in range(1, cantidad - 1):#se itera desde la posicion 1 hasta uno menos a la cantidad especificada
+        n = fibonacci[i] + fibonacci[i - 1]#la variable almacena la suma de los dos ultimos numeros de la lista
+        fibonacci.append(n)#se agrega dicho numero a la lista
+    return fibonacci
+print(sucFibonacci(cantidad))
 
 #Crear un codigo que calcule el factorial de un numero brindado por el usuario sin utilizar la funcion predefinida de Python. El 
 #factorial de un numero es el resultado (producto) de multiplicar todos los valores desde uno hasta determinado numero. Ejemplo: 
