@@ -106,3 +106,13 @@ sety = {12, 16, 20, 24}
 def interseccion_de_set(setx, sety):
     return setx.intersection(sety)
 print(interseccion_de_set(setx, sety))
+
+#Ejercicio Uso de Sets: Dado un conjunto de números, elimina los repetidos y muestra el resultado.
+numeros = [1, 2, 2, 3, 4, 4, 5, 5, 6]
+print(set(numeros))
+
+#Los sets no admiten elementos duplicados, sus elementos están desordenados, no pueden ser mutables y utilizan tablas hash para hacer 
+#más eficiente la búsqueda.
+
+#Forma correcta de crear un set vacio en Python:
+set_de_ejemplo = set() #la funcion set permite crear un set vacio. Si se utiliza {}, se creara un diccionario vacio.
