@@ -1,20 +1,13 @@
-#Funciones: son un fragmento de código que se ejecutará cada vez que se la invoque
-#def: defining, definir
+#Funciones: son un fragmento de código que se ejecutará cada vez que se la invoque. def: defining, definir
+#Llamar a una funcion implica ejecutar el bloque de codigo de la funcion y realizar la tarea especifica que esta en ella.
+#Parametro: es un valor que se espera como entrada a una funcion cuando se la declara. Es una variable que se utiliza en la
+#definicion de la funcion para referirse a los datos que se pasan a la funcion cuando se la llama.
 def funcion():#se define la función
     print("Contenido de la función")#el contenido de la función
     return True#se define el valor de la función, el cual devolverá
 
-colores = ["azul", "blanco", "amarillo", "blanchedalmond", "rojo"]
-def mostrar_color(i):#se define una funcion para mostrar en pantalla un color de la lista.
-    print(colores[i])
-def agregar_color(y):#se define una función para agregar un color a la lista utilizando append.
-    colores.append(y)
-agregar_color("violeta")#usamos ambas funciones
-mostrar_color(5)
-print(colores)
-
-#Crea una función llamada division_segura que reciba dos parametros y muestre la división del primero entre el segundo. Debe mostrar
-#un error si el denominador es cero.
+#Crea una función division_segura que reciba dos parametros y muestre la división del primero entre el segundo. Debe mostrar un error si
+#el denominador es cero.
 def division_segura(dividendo, divisor):
     while divisor == 0:
         print('No se puede dividir entre cero')
@@ -28,9 +21,9 @@ print(division_segura(dividendo, divisor))
 #A los parametros de una funcion se le pueden asignar valores por defecto. En el caso de que no se asignen valores a esos 
 #parametros, se utilizaran los valores por defecto. 
 #Crea una función que calcule el perimetro de un triangulo. La misma debe tener valores por defecto.
-def perimetr_triangulo(lado1=2, lado2=5, lado3=8):
+def perimetro_triangulo(lado1=2, lado2=5, lado3=8):
     return lado1 + lado2 + lado3
-print(perimetr_triangulo())
+print(perimetro_triangulo())
 
 #Crear una funcion que imprima una calificacion en base a un criterio de puntaje
 def calificacion(puntos):
@@ -56,7 +49,7 @@ print(calificacion(puntos))
 def descripcion_de_nota(nota):
     match nota:
         case 'A':
-            print('Ecelente')
+            print('Excelente')
         case 'B':
             print('Muy bueno')
         case 'C':
@@ -72,10 +65,10 @@ def descripcion_de_nota(nota):
 nota = input('Inserte su calificacion: ')
 print(descripcion_de_nota(nota))
 
-#Crear una funcion que reciba tres parametros: grado, previas, inasistencias. Puede aprobar si tiene maximo tres materias
-#previas; si tiene mas de 3 y hasta 6 debera aprobarlas, de lo contrario reprueba. El parametro inasistencias debe ser un
-#booleano, donde True es cantidad optima de asistencias y False es una cantidad mayor a la permitida. Se debe incluir un
-#match case para indicar a que curso sera promovido el estudiante.
+#Crear una funcion que reciba tres parametros: grado, previas, inasistencias. Puede aprobar si tiene maximo tres materias previas;
+#si tiene mas de 3 y hasta 6 debera aprobarlas, de lo contrario reprueba. El parametro inasistencias debe ser un booleano, donde
+#True es cantidad optima de asistencias y False es una cantidad mayor a la permitida. Se debe incluir un match case para indicar a
+#que curso sera promovido el estudiante.
 def aprobacion(grado, previas, inasistencias):
     if inasistencias:
         print('Cantidad de inasistencias optima')
@@ -135,8 +128,8 @@ def esta_entre_100_y_999(numero):
 numero = int(input('Ingrese un numero: '))
 print(esta_entre_100_y_999(numero))
 
-#la pizza perfecta no debe tener anana ni anchoas, debe tener pepperoni y/o champignones y no debe tener gluten.
-#cada parametro es un booleano
+#La pizza perfecta no debe tener anana ni anchoas, debe tener pepperoni y/o champignones y no debe tener gluten.
+#Cada parametro es un booleano.
 def pizza_perfecta(anana, anchoas, pepperoni, champiñones, gluten):
     return not(anana or anchoas) and (pepperoni or champiñones) and not(gluten)
 print(pizza_perfecta(False, False, True, False, False))
@@ -170,16 +163,15 @@ print(calculo_imc(altura, peso))
 notas = [12, 11, 11, 12, 10, 10, 6, 8, 6, 12]
 def promedio(notas):
     return sum(notas) / len(notas)
-print(f'La nota promedio obtenida en el curso fue de {str(float(promedio(notas)))}')
+print(f'La nota promedio obtenida en el curso fue de {promedio(notas}')
 
 #Calcular el porcentaje que representa la cantidad de puntos obtenidos en el curso con respecto al maximo.
 notas = [12, 11, 11, 12, 10, 10, 6, 8, 6, 12] #la cantidad de notas y su valor
-nota = 12 #puntos maximos que tiene una nota
-maxPuntos = len(notas) * nota #la cantidad maxima de puntos
+maxPuntos = len(notas) * 12 #la cantidad maxima de puntos
 puntosObtenidos = sum(notas) #la cantidad de puntos obtenidos
 def porcentaje(puntosObtenidos, maxPuntos):
     return (puntosObtenidos * 100) / (maxPuntos)
-print(f'El porcentaje de puntos obtenido en el curso fue {str(float(round(porcentaje(puntosObtenidos, maxPuntos))))}%')
+print(f'El porcentaje de puntos obtenido en el curso fue {round(porcentaje(puntosObtenidos, maxPuntos))}%')
 
 #Ejercicio Conversión de Temperaturas: Crea una función que convierta una temperatura en grados Celsius a Fahrenheit.
 #La fórmula de conversión es: °F=(°C×1,8)+32°F
@@ -187,11 +179,6 @@ def convertir_farenheit(celsius):
     return (f'La temperatura ingresada equivale a {((celsius * 1.8) + 32)} Farenheit')
 temperatura = float(input('Ingrese un valor de temperatura en grados celsius: '))
 print(convertir_farenheit(temperatura))
-
-#Llamar a una funcion en programacion implica ejecutar el bloque de codigo de la funcion y realizar la tarea especifica
-#que esta en ella. 
-#Parametro: es un valor que se espera como entrada a una funcion cuando se la declara. Es una variable que se utiliza en la
-#definicion de la funcion para referirse a los datos que se pasan a la funcion cuando se la llama.
 
 #¿Cual es la relacion entre la funcion principal y la funcion anidada en terminos de flujo de ejecucion?
 #El flujo cambia a la funcion anidada y luego cambia a la funcion principal. Al finalizar la ejecucion de una funcion el
@@ -205,11 +192,6 @@ def es_pregunta(oracion):
     return str.startswith(oracion, '¿') and str.endswith(oracion, '?')
 oracion = input('Escriba una oracion (puede ser una pregunta): ')
 print(es_pregunta(oracion))
-
-def mitad(numero):
-    return numero / 2
-numero = float(input('Ingrese un numero: '))
-print(mitad(numero))
 
 def suma_longitudes(string, string2):
     return (f'La suma de los caracteres de ambas palabras es: {(len(string)) + (len(string2))}')
