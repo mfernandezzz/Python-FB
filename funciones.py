@@ -180,3 +180,117 @@ puntosObtenidos = sum(notas) #la cantidad de puntos obtenidos
 def porcentaje(puntosObtenidos, maxPuntos):
     return (puntosObtenidos * 100) / (maxPuntos)
 print(f'El porcentaje de puntos obtenido en el curso fue {str(float(round(porcentaje(puntosObtenidos, maxPuntos))))}%')
+
+#Ejercicio Conversión de Temperaturas: Crea una función que convierta una temperatura en grados Celsius a Fahrenheit.
+#La fórmula de conversión es: °F=(°C×1,8)+32°F
+def convertir_farenheit(celsius):
+    return (f'La temperatura ingresada equivale a {((celsius * 1.8) + 32)} Farenheit')
+temperatura = float(input('Ingrese un valor de temperatura en grados celsius: '))
+print(convertir_farenheit(temperatura))
+
+#Llamar a una funcion en programacion implica ejecutar el bloque de codigo de la funcion y realizar la tarea especifica
+#que esta en ella. 
+#Parametro: es un valor que se espera como entrada a una funcion cuando se la declara. Es una variable que se utiliza en la
+#definicion de la funcion para referirse a los datos que se pasan a la funcion cuando se la llama.
+
+#¿Cual es la relacion entre la funcion principal y la funcion anidada en terminos de flujo de ejecucion?
+#El flujo cambia a la funcion anidada y luego cambia a la funcion principal. Al finalizar la ejecucion de una funcion el
+#flujo retorna al punto siguiente al que fue llamada, sea esto dentro de otra funcion, o no.
+
+#¿En que se diferencia un procedimiento de una funcion? Los procedimientos no tienen un retorno, pero si tienen un
+#efecto al ser invocados.
+
+#saber si un string es una pregunta o no, si la pregunta es en español, empieza y termina con un signo de interrogacion.
+def es_pregunta(oracion):
+    return str.startswith(oracion, '¿') and str.endswith(oracion, '?')
+oracion = input('Escriba una oracion (puede ser una pregunta): ')
+print(es_pregunta(oracion))
+
+def mitad(numero):
+    return numero / 2
+numero = float(input('Ingrese un numero: '))
+print(mitad(numero))
+
+def suma_longitudes(string, string2):
+    return (f'La suma de los caracteres de ambas palabras es: {(len(string)) + (len(string2))}')
+string = input('Escriba un string: ')
+string2 = input('Escriba otro string: ')
+print(suma_longitudes(string, string2))
+
+def son_las_doce(hora):
+    return hora == 12
+la_hora = int(input('Ingrese una hora: '))
+print(son_las_doce(la_hora))
+
+#Invocar funciones dentro de otra funcion
+def doble(numero): #creamos la funcion que devuelve el doble de un numero ingresado como parametro
+    return numero * 2
+def siguiente_del_doble(numero): #creamos la funcion que tome la funcion anterior y le sume 1
+    return doble(numero) + 1
+numero = float(input('Ingrese un numero: '))
+print(siguiente_del_doble(numero))
+
+#Ejercicio: define una funcion anterior (que recibe un numero y devuelve uno menos), triple (el triple de un numero) y
+#anterior del triple que recibe el numero triplicado y le resta 1
+def anterior(entero):
+    return entero - 1 #recibe un numero y le resta uno
+def triple(entero):
+    return entero * 3 #recibe un numero y lo multiplica por tres
+def anterior_del_triple(entero):
+    return anterior(triple(entero)) #recibe un numero, lo multiplica por tres y le resta uno
+entero = int(input('Ingrese un numero entero: '))
+print(anterior_del_triple(entero))
+
+#Ejercicio: crear una funcion que reciba tres numeros como parametros y devuelva un booleano determinando si el primer numero es
+#mayor o igual al segundo y menor o igual al tercer. Luego crear otra funcion que haga lo contrario a la primera.
+def estaEntre(num, num2, num3):
+    return (num >= num2) and (num <= num3)
+def estaFueraRango(num, num2, num3):
+    return (num <= num2) and (num >= num3)
+num = int(input('Ingrese un numero: '))
+num2 = int(input('Ingrese un segundo numero: '))
+num3 = int(input('Ingrese un tercer numero: '))
+print(estaEntre(num, num2, num3))
+print(estaFueraRango(num, num2, num3))
+
+#Ejercicio: crea una funcion que reciba un string y lo devuelva en mayusculas y entre signos de exclamacion.
+def mayusculas(string):
+    return (f'¡{str.upper(string)}!')
+string = str(input('Escriba una palabra o palabras: '))
+print(mayusculas(string))
+
+#Ejercicio: escribi una funcion que tome un dia de semana y devuela un booleano dependiendo de si es fin de semana o no.
+def es_fin_de_semana(dia):
+    return dia == 'sabado' or dia == 'domingo'
+dia = str.lower(input('Escriba un dia de semana: '))
+print(es_fin_de_semana(dia))
+
+#¿Que hace el siguiente codigo?
+def funcionA():
+    print(1)
+    def funcionB():
+        print(2)
+
+def funcionC():
+    def funcionD():
+        print(3)
+
+    print(4)
+    funcionD()
+
+def funcionE():
+    funcionA()
+
+print(5)
+funcionC()
+#Explicacion:
+#Primero se imprime el numero 5. Luego se llama a la funcionC, que contiene la declaracion de la funcionD() un print y la llamada
+#a la funcionD(). Por lo que primero se ejecuta el print con el numero 4 y luego la funcionD que imprime en pantalla el numero 3.
+#Por lo tanto, el codigo lo que hace es mostrar el 543.
+
+#Explicacion2:
+#El flujo inicia en la línea 16 imprimiendo 5, ya que antes solo hay definiciones. Luego llama a funcionC(), por lo que el flujo 
+#salta a la línea 6, allí lo primero que no es una definición es la línea 10, que indica imprimir un 4. En la línea 11 se llama a 
+#funcionD(), y el código pasa a la línea 7. en funcionD() se indica imprimir 3. Luego finaliza la ejecución de funcionD(), por lo 
+#que el flujo vuelve a la línea 11. Finaliza funcionC(), y el código vuelve a la línea 17, y finaliza el programa. El flujo nunca 
+#pasa por el resto de las líneas.
