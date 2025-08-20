@@ -356,11 +356,3 @@ print(palabras_cortas)
 #Generar una lista de estudiantes que aprobaron ambas asignaturas. Filtrado.
 #Calcular el promedio de calificaciones para cada estudiante. Mapeo.
 #Crear una lista de estudiantes con sus nombres y promedio de calificaciones. Mapeo.
-
-#Ejercicio Conversión de Temperaturas: Crea una función que convierta una temperatura en grados Celsius a Fahrenheit.
-#La fórmula de conversión es: °F=(°C×1,8)+32°F
-def convertir_farenheit(celsius):
-    return (f'La temperatura ingresada equivale a {((celsius * 1.8) + 32)} Farenheit')
-
-temperatura = float(input('Ingrese un valor de temperatura en grados celsius: '))
-print(convertir_farenheit(temperatura))
