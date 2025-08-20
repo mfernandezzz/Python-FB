@@ -13,8 +13,8 @@ while i <= 5:
     i += 1
 print("Fin")
 
-#crea una funcion enteros que reciba dos numeros enteros como parametros para despues devolver una lista con el conteo
-#de los numeros introducidos, sin contar el ultimo. Se deben contemplar los conteos regresivos.
+#Crea una funcion que reciba dos numeros enteros como parametros para despues devolver una lista con el conteo de los numeros
+#introducidos, sin contar el ultimo. Se deben contemplar los conteos regresivos.
 primero, segundo = int(input('Ingrese un numero: ')), int(input('Ingrese otro numero: '))
 def conteo(primero, segundo):
     while primero < segundo:
@@ -28,16 +28,15 @@ print(conteo(primero, segundo))
 
 #Pedir un numero al usuario y despues mostrar la suma de todos los numeros hasta el introducido por el usuario.
 num = int(input('Escriba un numero entero: '))
-i, suma = 1, 0
-while num > 1 and i <= num:
-    suma += i
-    i += 1
+i, suma = 1, 0 #i es la variable de iteracion. La variable suma almacena el resultado final
+while num > 1 and i <= num: #la condicion
+    suma += i #a suma se le suma el valor de i
+    i += 1 #la variable de iteracion incrementa su valor en uno
 print(f'La suma de todos los numeros hasta el ingresado es: {suma}')
 
 #Crear una funcion que muestre y cuente los numeros multiplos de tres entre dos numeros dados.
 num = int(input('Ingrese un numero entero: '))
 num2 = int(input('Ingrese un numero entero mayor al anterior: '))
-
 def multiplos3(num, num2):
     c = 0
     while num > num2:
