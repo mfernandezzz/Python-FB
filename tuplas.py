@@ -46,3 +46,15 @@ def generarTuplas(nombres, edades):
         print(t) 
     return ' '
 print(generarTuplas(nombres, edades))
+
+#Ejercicio Generación de Iniciales: Crea una función que reciba un nombre y un apellido y retorne una tupla con sus iniciales.
+def obtenerIniciales(nombre, apellido1, apellido2):
+    iniciales = []
+    iniciales.append(nombre[0])
+    iniciales.append(apellido1[0])
+    iniciales.append(apellido2[0])
+    return (f'Tupla con tus iniciales: {tuple(iniciales)}')
+nombre = str(input('Ingrese su nombre: '))
+primerApellido = str(input('Ingrese su primer apellido: '))
+segundoApellido = str(input('Ingrese su segundo apellido: '))
+print(obtenerIniciales(nombre, primerApellido, segundoApellido))
